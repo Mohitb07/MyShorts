@@ -1,14 +1,13 @@
 {
   "expo": {
-    "name": "inshort",
-    "slug": "inshort",
+    "name": "MyShort",
+    "slug": "myshort",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "contain"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.mohitb07.myshort"
     },
     "web": {
       "favicon": "./assets/favicon.png"

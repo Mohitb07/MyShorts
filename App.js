@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useContext } from 'react';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import InShortTabs from './components/InShortTabs';
+import Context from './api/Context';
+import { NewsContext } from './api/Context';
 
-export default function App() {
+function App() {
+  
+  const {darkTheme, setDarkTheme} = useContext(NewsContext)
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <View style={{...styles.container, backgroundColor: darkTheme ? '#282C35':'white'}}>
+        <InShortTabs />
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: StatusBar.currentHeight,
   },
 });
+
+export default () => {
+  return (
+      <Context>
+        <App />
+      </Context>
+  )
+}
